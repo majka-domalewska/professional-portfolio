@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Open+Sans:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #151515;
+  --primary: #8D4CA6;
+  --primary-foreground: #CBCBCB;
+  --secondary: #31B9F8;
+  --secondary-foreground: #0f1720;
+  --muted: #94a3b8;
+  --border: #e6e6e6;
+  --max-width: 1240px;
+  --content-padding: 1rem;
+}
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html, body { height: 100%; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    color: var(--primary-foreground);
+    background-color: var(--background);
+    font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.45;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    margin: 0 0 1rem 0;
+    font-family: 'Krona One', 'Open Sans', sans-serif;
+    line-height: 1.15;
+  }
+
+  h1 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); }
+  h2 { font-size: clamp(1.4rem, 2.8vw, 2.0rem); }
+  h3 { font-size: clamp(1.2rem, 2.2vw, 1.6rem); }
+
+  p { margin: 0 0 1rem 0; }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Accessible focus styles */
+  :focus {
+    outline: 3px solid rgba(141,76,166,0.22);
+    outline-offset: 2px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--content-padding);
+    padding-right: var(--content-padding);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .btn.secondary {
+    background-color: transparent;
+    color: var(--primary-foreground);
+    border-color: rgba(255,255,255,0.06);
+  }
+
+  .muted { color: var(--muted); }
+  .hr { height: 1px; background: rgba(255,255,255,0.04); border: none; margin: 1.25rem 0; }
+}
