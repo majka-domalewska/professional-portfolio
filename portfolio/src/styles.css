@@ -4,6 +4,7 @@
 :root {
   --background: #151515;
   --primary: #8D4CA6;
+  --dark-purple: #491D6D;
   --primary-foreground: #CBCBCB;
   --secondary: #31B9F8;
   --secondary-foreground: #0f1720;
@@ -63,6 +64,7 @@
   .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: .5rem 1.5rem;
     border-radius: 250px;
