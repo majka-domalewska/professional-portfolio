@@ -36,6 +36,7 @@
     margin: 0 0 1rem 0;
     font-family: 'Krona One', 'Open Sans', sans-serif;
     line-height: 1.15;
+    color: var(--white);
   }
 
   h1 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); }
@@ -73,6 +74,18 @@
     color: var(--color-black);
     cursor: pointer;
     font-weight: 600;
+  }
+
+  .infinite-scroll {
+    animation-name: infinite-scroll;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
   }
 
   .btn.secondary {
