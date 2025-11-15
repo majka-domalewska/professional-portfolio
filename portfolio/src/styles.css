@@ -11,6 +11,7 @@
   --border: #e6e6e6;
   --max-width: 1240px;
   --content-padding: 1rem;
+  --white: #f2f2f2;
 }
 
 @layer base {
@@ -41,7 +42,7 @@
   h3 { font-size: clamp(1.2rem, 2.2vw, 1.6rem); }
 
   p { margin: 0 0 1rem 0; }
-  a { color: var(--primary); text-decoration: none; }
+  a { color: var(--white); text-decoration: none; }
   a:hover { text-decoration: underline; }
 
   /* Accessible focus styles */
@@ -63,11 +64,11 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 0.9rem;
-    border-radius: 6px;
-    border: 1px solid transparent;
-    background-color: var(--primary);
-    color: var(--primary-foreground);
+    padding: .5rem 1.5rem;
+    border-radius: 250px;
+    border: 1px solid var(--muted);
+    background-color: var(--white);
+    color: var(--color-black);
     cursor: pointer;
     font-weight: 600;
   }
@@ -80,4 +81,27 @@
 
   .muted { color: var(--muted); }
   .hr { height: 1px; background: rgba(255,255,255,0.04); border: none; margin: 1.25rem 0; }
+}
+
+.hover_underline {
+  display: inline-block;
+  position: relative;
+}
+
+.hover_underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--white);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover_underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
