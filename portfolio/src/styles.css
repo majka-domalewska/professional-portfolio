@@ -13,6 +13,8 @@
   --max-width: 1240px;
   --content-padding: 1rem;
   --white: #f2f2f2;
+  --bottom: 10rem;
+  --bottom-mobile: 6rem;
 }
 
 @layer base {
@@ -45,7 +47,6 @@
 
   p { margin: 0 0 1rem 0; }
   a { color: var(--white); text-decoration: none; }
-  a:hover { text-decoration: underline; }
 
   /* Accessible focus styles */
   :focus {
