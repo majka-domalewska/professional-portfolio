@@ -14,7 +14,9 @@
   --content-padding: 1rem;
   --white: #f2f2f2;
   --bottom: 10rem;
-  --bottom-mobile: 6rem;
+  --bottom-mobile: 5rem;
+  --bottom-section-title: 6rem;
+  --bottom-section-title-mobile: 3rem;
 }
 
 @layer base {
@@ -77,6 +79,12 @@
     font-weight: 600;
   }
 
+  .max-section-width {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .infinite-scroll {
     animation-name: infinite-scroll;
     animation-duration: 60s;
@@ -91,6 +99,13 @@
     border-radius: 40px;
     text-transform: uppercase;
     margin: 1rem;
+  }
+
+  .glass-bg {
+    background: #00000010;
+    border: 1px solid gray;
+    backdrop-filter: blur(.5rem);
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.15);
   }
 
   @keyframes infinite-scroll {
