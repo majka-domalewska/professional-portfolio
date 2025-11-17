@@ -17,6 +17,7 @@
   --bottom-mobile: 5rem;
   --bottom-section-title: 6rem;
   --bottom-section-title-mobile: 3rem;
+  --heading-font: 'Krona One', 'Open Sans', sans-serif
 }
 
 @layer base {
