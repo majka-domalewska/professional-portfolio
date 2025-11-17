@@ -4,6 +4,7 @@
 :root {
   --background: #151515;
   --primary: #8D4CA6;
+  --dark-purple: #491D6D;
   --primary-foreground: #CBCBCB;
   --secondary: #31B9F8;
   --secondary-foreground: #0f1720;
@@ -12,6 +13,11 @@
   --max-width: 1240px;
   --content-padding: 1rem;
   --white: #f2f2f2;
+  --bottom: 10rem;
+  --bottom-mobile: 5rem;
+  --bottom-section-title: 6rem;
+  --bottom-section-title-mobile: 3rem;
+  --heading-font: 'Krona One', 'Open Sans', sans-serif
 }
 
 @layer base {
@@ -35,6 +41,7 @@
     margin: 0 0 1rem 0;
     font-family: 'Krona One', 'Open Sans', sans-serif;
     line-height: 1.15;
+    color: var(--white);
   }
 
   h1 { font-size: clamp(1.6rem, 3.5vw, 2.6rem); }
@@ -43,7 +50,6 @@
 
   p { margin: 0 0 1rem 0; }
   a { color: var(--white); text-decoration: none; }
-  a:hover { text-decoration: underline; }
 
   /* Accessible focus styles */
   :focus {
@@ -63,6 +69,7 @@
   .btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     padding: .5rem 1.5rem;
     border-radius: 250px;
@@ -71,6 +78,40 @@
     color: var(--color-black);
     cursor: pointer;
     font-weight: 600;
+  }
+
+  .max-section-width {
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .infinite-scroll {
+    animation-name: infinite-scroll;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .outline_type {
+    border: 1px solid var(--primary-foreground);
+    padding: 0.5rem 1rem;
+    font-size: smaller;
+    border-radius: 40px;
+    text-transform: uppercase;
+    margin: 1rem;
+  }
+
+  .glass-bg {
+    background: #00000010;
+    border: 1px solid gray;
+    backdrop-filter: blur(.5rem);
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.15);
+  }
+
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
   }
 
   .btn.secondary {
