@@ -1,5 +1,6 @@
 # professional-portfolio
-My professional portfolio, primarily for sem. 6 HCD, hopefully to carry over for later. 
+My professional portfolio, primarily for sem. 6 HCD, hopefully to carry over for later.
+Still in the works, so it's not on a domain yet. 
 
 # ToDo:
 - bavkground on the Resume button on hero section
