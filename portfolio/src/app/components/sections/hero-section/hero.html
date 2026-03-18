@@ -9,7 +9,7 @@
     </div>
 
     <div
-        class="row-start-3 gap-2 md:row-start-3 md:col-start-1 md:col-span-1 flex flex-wrap md:flex-nowrap justify-left items-end rounded-md"
+        class="row-start-3 sticky gap-2 md:row-start-3 md:col-start-1 md:col-span-1 flex flex-wrap md:flex-nowrap justify-left items-end rounded-md"
     >
         <label
             class="group relative inline-flex w-11 shrink-0 shadow-md rounded-full bg-(--primary) p-0.5 inset-ring inset-ring-gray-900/5 outline-offset-2 outline-(--primary) transition-colors duration-200 ease-in-out has-checked:bg-(--primary) has-focus-visible:outline-2 dark:bg-(--primary) dark:inset-ring-white/10 dark:outline-(--primary) dark:has-checked:bg-(--primary)"
@@ -32,9 +32,15 @@
     <div
         class="row-start-3 gap-2 md:row-start-3 md:col-start-2 md:col-span-1 flex flex-wrap md:flex-nowrap justify-center items-end"
     >
-        <button class="btn dark:btn-dark bg-transparent border-2 grow">Work</button>
-        <button class="btn dark:btn-dark bg-transparent border-2 grow">Photos</button>
-        <button class="btn dark:btn-dark bg-transparent border-2 grow">Contact</button>
+        <a href="#projects" class="m-0 p-0 w-auto">
+            <button class="btn h-max w-full dark:btn-dark bg-transparent border-2 grow">Work</button>
+        </a>
+        <a href="photos" class="m-0 p-0 w-auto">
+            <button class="btn h-max w-full dark:btn-dark bg-transparent border-2 grow">Photos</button>
+        </a>
+        <a href="#contact" class="m-0 p-0 w-auto">
+            <button class="btn h-max w-full dark:btn-dark bg-transparent border-2 grow">Contact</button>
+        </a>
         <a href="/assets/Maja CV.pdf" target="_blank">
             <button class="btn dark:btn-dark dynamic-btn w-full">Resume</button>
         </a>
