@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ThemeService } from '../../../services/theme';
 
 @Component({
   selector: 'app-hero',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './hero.css',
 })
 export class Hero {
-
+  constructor(public theme: ThemeService) {}
 }

@@ -1,60 +1,94 @@
-<section class="z-2 grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 h-[calc(100vh-90px)] mb-(--bottom-section-title-mobile) md:mb-(--bottom-section-title) max-section-width">
-    <div class="row-start-1 md:row-start-3 md:col-start-1 flex justify-start items-start md:items-end">
-        <svg class="w-10 md:w-12 aspect-square" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-            <style type="text/css">
-                .st0 {
-                    fill: var(--white);
-                }
-            </style>
-            <g>
-                <path
-                    class="st0"
-                    d="M300.7,591.8L300.7,591.8c-5,0-9.7-2.2-12.9-6l-1-1.1c-3.5-4.1-5.4-9.3-5.4-14.7l-0.9-529.9
-		c-25.3,6.7-49.2,30.9-68.6,69.7c-23.2,46.5-36.6,107.8-38.3,174c0.1,4.5,0.2,9.1,0.2,13.6h-0.3c0,0.2,0,0.4,0,0.6h-34
-		c0-4.8,0.1-9.5,0.2-14.2c-1.5-62.8-13.2-120-33.7-164.4C60,167.3,34,231.1,34,297.4c0,74,32.2,144.7,88.2,194l-22.5,25.5
-		C36.4,461.2,0,381.2,0,297.4C0,255,8.9,214.2,26.5,176c17-36.8,41.2-69.4,71.8-96.6l0,0c3.1-2.8,7.1-4.3,11.3-4.3h1.3
-		c6.1,0,11.8,3.3,14.8,8.6v0c12.7,22.4,23.1,48.5,30.9,77.2c6.5-24,14.8-46.3,24.8-66.3c29.1-58.3,69.4-90.5,113.4-90.5l0,0
-		c4.3,0,8.4,1.6,11.6,4.6l2.6,2.4c3.5,3.2,5.4,7.7,5.4,12.4v0l0.9,533.8c136.9-7.6,245.9-121.1,245.9-259.4
-		c0-75-32.9-146.3-90.2-195.7l22.2-25.8c64.8,55.9,102,136.6,102,221.5c0,78.7-30.4,152.5-85.6,207.8
-		C454.3,561.2,380,591.8,300.7,591.8z"
-                />
-            </g>
-        </svg>
-    </div>
-
-    <p class="hidden md:block min-w-max md:row-start-1 md:col-start-2 text-center">Based in the Netherlands | Working worldwide</p>
-
-    <a href="#" class="hidden md:block row-start-1 col-start-3 font-bold w-full text-right">
-        <p class="hover_underline">Get in touch</p>
-    </a>
-
-    <div class="row-start-2 md:row-start-2 md:col-span-3 flex flex-col justify-center items-center text-(--white)">
+<section
+    class="z-2 grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 h-[calc(100vh-150px)] mb-(--bottom-section-title-mobile) md:mb-(--bottom-section-title) max-section-width"
+>
+    <div
+        class="row-start-2 md:row-start-2 md:col-span-3 flex flex-col justify-center items-center text-(--white)"
+    >
         <h1 class="text-4xl md:text-7xl lg:text-8xl uppercase text-center">Maja</h1>
         <h1 class="text-4xl md:text-7xl lg:text-8xl uppercase text-center">Domalewska</h1>
     </div>
 
-    <div class="hidden md:block md:row-start-1 md:col-start-1 md:col-span-1 -rotate-90 w-max">
-        <p>Understand the user. Iterate. Create.</p>
+    <div
+        class="row-start-3 sticky gap-2 md:row-start-3 md:col-start-1 md:col-span-1 flex flex-wrap md:flex-nowrap justify-left items-end rounded-md"
+    >
+        <label
+            class="group relative inline-flex w-11 shrink-0 shadow-md rounded-full bg-(--primary) p-0.5 inset-ring inset-ring-gray-900/5 outline-offset-2 outline-(--primary) transition-colors duration-200 ease-in-out has-checked:bg-(--primary) has-focus-visible:outline-2 dark:bg-(--primary) dark:inset-ring-white/10 dark:outline-(--primary) dark:has-checked:bg-(--primary)"
+        >
+            <span
+                class="size-5 rounded-full bg-white shadow-xs ring-1 ring-gray-900/5 transition-transform duration-200 ease-in-out group-has-checked:translate-x-5"
+            ></span>
+
+            <input
+                type="checkbox"
+                name="theme"
+                aria-label="Toggle dark mode"
+                class="absolute inset-0 size-full appearance-none focus:outline-hidden"
+                [checked]="theme.isDark"
+                (change)="theme.toggleTheme()"
+            />
+        </label>
     </div>
 
-    <div class="row-start-3 gap-2 md:row-start-3 md:col-start-2 md:col-span-1 flex flex-wrap md:flex-nowrap justify-center items-end">
-        <button class="btn grow">Work</button>
-        <button class="btn grow">Photos</button>
-        <button class="btn grow">Contact</button>
+    <div
+        class="row-start-3 gap-2 md:row-start-3 md:col-start-2 md:col-span-1 flex flex-wrap md:flex-nowrap justify-center items-end"
+    >
+        <a href="#projects" class="m-0 p-0 w-auto">
+            <button class="btn h-max w-full dark:btn-dark bg-transparent border-2 grow">Work</button>
+        </a>
+        <a href="photos" class="m-0 p-0 w-auto">
+            <button class="btn h-max w-full dark:btn-dark bg-transparent border-2 grow">Photos</button>
+        </a>
+        <a href="#contact" class="m-0 p-0 w-auto">
+            <button class="btn h-max w-full dark:btn-dark bg-transparent border-2 grow">Contact</button>
+        </a>
         <a href="/assets/Maja CV.pdf" target="_blank">
-        <button class="btn dynamic-btn w-full">Resume</button>
+            <button class="btn dark:btn-dark dynamic-btn w-full">Resume</button>
         </a>
     </div>
 
-    <div class="row-start-4 md:row-start-3 md:col-start-3 flex justify-end items-end space-x-2">
-        <a href="https://open.spotify.com/user/kv4efcgj0cadq0uy1u5cgyi5n?si=1cef04fca0c44218">
-            <img class="grow h-8 mb-2" src="assets/spotify-50.png" alt="spotify icon" />
-        </a>
+    <div class="row-start-4 md:row-start-3 md:col-start-3 flex justify-end items-end space-x-7">
         <a href="https://www.linkedin.com/in/majadomalewska/">
-            <img class="grow h-8 mb-2 pl-2" src="assets/linkedin-50.png" alt="linkedin icon" />
+            <svg class="h-7 w-7 grow shrink-0" viewBox="0 5 1036 990">
+                <path
+                    d="M0 120c0-33.334 11.667-60.834 35-82.5C58.333 15.833 88.667 5 126 5c36.667 0 66.333 10.666 89 32 23.333 22 35 50.666 35 86 0 32-11.333 58.666-34 80-23.333 22-54 33-92 33h-1c-36.667 0-66.333-11-89-33S0 153.333 0 120zm13 875V327h222v668H13zm345 0h222V622c0-23.334 2.667-41.334 8-54 9.333-22.667 23.5-41.834 42.5-57.5 19-15.667 42.833-23.5 71.5-23.5 74.667 0 112 50.333 112 151v357h222V612c0-98.667-23.333-173.5-70-224.5S857.667 311 781 311c-86 0-153 37-201 111v2h-1l1-2v-95H358c1.333 21.333 2 87.666 2 199 0 111.333-.667 267.666-2 469z"
+                    fill="var(--primary-foreground)"
+                    stroke="var(--primary-foreground)"
+                    stroke-width=".094"
+                />
+            </svg>
+        </a>
+        <a
+            href="
+        https://tidal.com/playlist/5cf18800-0f88-48d7-9bf3-5f206585f9fe
+        "
+        >
+            <svg
+                class="h-7 w-14 grow shrink-0"
+                viewBox="0 0 1453 707"
+                preserveAspectRatio="xMidYMid meet"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M596.8 0h.8c6.102 7 13 13.2 19.5 19.9l44.2 44.2v.8c-21.398 21.3-42.7 42.8-64.1 64.1-21.5-21.4-42.9-42.9-64.4-64.3 1.102-2.1 3.2-3.5 4.8-5.2C557.3 39.6 577.3 20 596.8 0zm129 0h.8c.602.9 1.2 1.7 2 2.5 20.7 20.5 41.102 41.3 62 61.7-.5 1.2-1.6 2-2.5 2.9-20.698 20.6-41.3 41.3-62 61.9-21.6-21.3-42.8-43-64.5-64.2 21-21.9 43.1-43 64.2-64.8zm129 0h.8c4 4.8 8.7 8.9 13 13.4 16.2 16.2 32.302 32.3 48.5 48.5.802.9 2.102 1.7 2.4 3-21.7 21.1-42.7 43-64.5 64.1l-61.5-61.5c-1-1.1-2.3-1.9-2.8-3.3C801.6 53.6 812.2 42.7 823 32c10.6-10.7 21.4-21.1 31.8-32zM662.5 192.5c21.1-21.1 42.3-42.2 63.4-63.4l.898.4c21.2 21.3 42.4 42.6 63.8 63.7-.698 1.6-2.198 2.5-3.3 3.8-15.398 15.3-30.8 30.8-46.2 46.1-5 4.8-9.8 10.2-14.898 14.7-7.3-6.6-14-14-21.102-20.8-14.398-14.4-28.698-28.8-43.198-43.1.2-.4.4-1 .6-1.4zM0 469.9h192.4c.1 15.398.1 30.8 0 46.1h-69.3v182c-.1 3 .2 6-.4 9H69.2c.2-63.7.1-127.3.1-191H0zm352.9 0c18 0 36 0 54 .1-.1 79 .2 158-.2 237H353c-.3-21-.1-42-.2-63 .1-58 0-116 .1-174.1zm952.1 0c18 0 36 0 54 .1v189.4c31.3.198 62.7.1 94 .1V707h-147.9c-.3-79 0-158-.1-237.1zm-507.6 79.5c-5.4-18.602-15.9-35.5-30.5-48.2-19.3-17.1-44.5-26.4-69.8-29.7-14.3-2.1-28.8-1.5-43.198-1.6h-63.9c-1.2 0-2.5.1-3.7.3.3 78.3 0 156.6.2 234.898-.1.5-.2 1.4-.3 1.9H678.6c8.302-1.5 16.802-1.4 25-3.2 28-5.1 54.9-19 73.2-41.1 13.5-16 21.8-36.102 24.5-56.8 2.4-18.898 1.4-38.298-3.9-56.498zm-60.9 78.7c-6.7 10.7-16.6 19.2-28.1 24.4-10.4 4.8-21.9 7-33.302 7.3-12 .102-24 0-36 .102-.6-13.302-.1-26.602-.3-39.9 0-34.7 0-69.3.102-104H676c18.6.4 37.5 6.8 51 20 12.1 11.7 18.9 28.2 20 44.9 1.1 16.298-1.9 33.198-10.5 47.198zm402.1 23.1c-22.6-54.9-45.1-109.9-67.898-164.7-2.102-5.5-4.301-11.1-6.801-16.4-18.601-.3-37.199-.3-55.801 0-31.8 76.5-63.6 153-95.398 229.4-1 2.5-2.2 4.9-2.7 7.5h57.5c5.7-15.8 11.8-31.4 17.5-47.2 32.6-.5 65.3-.1 98-.2 1.7-.5 2.2 1.302 2.6 2.5 5.5 15 11.102 29.9 16.5 44.9h59.302c-7.204-18.8-15.204-37.2-22.804-55.8zm-138.4-33.5c-.3-2.102 1-3.9 1.6-5.8 10.9-28.5 22.102-57 32.9-85.5.2-.102.6-.2.8-.2 11.3 30 22.8 59.898 34.2 89.898 0 .4.1 1.2.1 1.602-23.2-.2-46.4-.2-69.6 0z"
+                    fill="var(--primary-foreground)"
+                    stroke="var(--primary-foreground)"
+                    stroke-width=".094"
+                />
+            </svg>
         </a>
         <a href="https://www.instagram.com/majka_domalewska/">
-            <img class="grow h-8 mb-2 pl-2" src="assets/instagram-50.png" alt="instagram icon" />
+            <svg class="h-7 w-7 grow shrink-0" viewBox="0 0 2499.899999999999 2500">
+                <path
+                    d="M833.4 1250c0-230.11 186.49-416.7 416.6-416.7s416.7 186.59 416.7 416.7-186.59 416.7-416.7 416.7-416.6-186.59-416.6-416.7m-225.26 0c0 354.5 287.36 641.86 641.86 641.86s641.86-287.36 641.86-641.86S1604.5 608.14 1250 608.14 608.14 895.5 608.14 1250m1159.13-667.31a150 150 0 1 0 150.06-149.94h-.06a150.07 150.07 0 0 0-150 149.94M745 2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28 7.27-505.15c5.55-121.87 26-188 43-232.13 22.72-58.36 49.78-100 93.5-143.78s85.32-70.88 143.78-93.5c44-17.16 110.26-37.46 232.13-43 131.76-6.06 171.34-7.27 505-7.27s373.28 1.31 505.15 7.27c121.87 5.55 188 26 232.13 43 58.36 22.62 100 49.78 143.78 93.5s70.78 85.42 93.5 143.78c17.16 44 37.46 110.26 43 232.13 6.06 131.87 7.27 171.34 7.27 505.15s-1.21 373.28-7.27 505.15c-5.55 121.87-25.95 188.11-43 232.13-22.72 58.36-49.78 100-93.5 143.68s-85.42 70.78-143.78 93.5c-44 17.16-110.26 37.46-232.13 43-131.76 6.06-171.34 7.27-505.15 7.27s-373.28-1.21-505-7.27M734.65 7.57c-133.07 6.06-224 27.16-303.41 58.06C349 97.54 279.38 140.35 209.81 209.81S97.54 349 65.63 431.24c-30.9 79.46-52 170.34-58.06 303.41C1.41 867.93 0 910.54 0 1250s1.41 382.07 7.57 515.35c6.06 133.08 27.16 223.95 58.06 303.41 31.91 82.19 74.62 152 144.18 221.43S349 2402.37 431.24 2434.37c79.56 30.9 170.34 52 303.41 58.06C868 2498.49 910.54 2500 1250 2500s382.07-1.41 515.35-7.57c133.08-6.06 223.95-27.16 303.41-58.06 82.19-32 151.86-74.72 221.43-144.18s112.18-139.24 144.18-221.43c30.9-79.46 52.1-170.34 58.06-303.41 6.06-133.38 7.47-175.89 7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95 97.54 2068.86 65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17 1.51 1589.56 0 1250.1 0S868 1.41 734.65 7.57"
+                    fill="url(#a)"
+                />
+                <path
+                    d="M833.4 1250c0-230.11 186.49-416.7 416.6-416.7s416.7 186.59 416.7 416.7-186.59 416.7-416.7 416.7-416.6-186.59-416.6-416.7m-225.26 0c0 354.5 287.36 641.86 641.86 641.86s641.86-287.36 641.86-641.86S1604.5 608.14 1250 608.14 608.14 895.5 608.14 1250m1159.13-667.31a150 150 0 1 0 150.06-149.94h-.06a150.07 150.07 0 0 0-150 149.94M745 2267.47c-121.87-5.55-188.11-25.85-232.13-43-58.36-22.72-100-49.78-143.78-93.5s-70.88-85.32-93.5-143.68c-17.16-44-37.46-110.26-43-232.13-6.06-131.76-7.27-171.34-7.27-505.15s1.31-373.28 7.27-505.15c5.55-121.87 26-188 43-232.13 22.72-58.36 49.78-100 93.5-143.78s85.32-70.88 143.78-93.5c44-17.16 110.26-37.46 232.13-43 131.76-6.06 171.34-7.27 505-7.27s373.28 1.31 505.15 7.27c121.87 5.55 188 26 232.13 43 58.36 22.62 100 49.78 143.78 93.5s70.78 85.42 93.5 143.78c17.16 44 37.46 110.26 43 232.13 6.06 131.87 7.27 171.34 7.27 505.15s-1.21 373.28-7.27 505.15c-5.55 121.87-25.95 188.11-43 232.13-22.72 58.36-49.78 100-93.5 143.68s-85.42 70.78-143.78 93.5c-44 17.16-110.26 37.46-232.13 43-131.76 6.06-171.34 7.27-505.15 7.27s-373.28-1.21-505-7.27M734.65 7.57c-133.07 6.06-224 27.16-303.41 58.06C349 97.54 279.38 140.35 209.81 209.81S97.54 349 65.63 431.24c-30.9 79.46-52 170.34-58.06 303.41C1.41 867.93 0 910.54 0 1250s1.41 382.07 7.57 515.35c6.06 133.08 27.16 223.95 58.06 303.41 31.91 82.19 74.62 152 144.18 221.43S349 2402.37 431.24 2434.37c79.56 30.9 170.34 52 303.41 58.06C868 2498.49 910.54 2500 1250 2500s382.07-1.41 515.35-7.57c133.08-6.06 223.95-27.16 303.41-58.06 82.19-32 151.86-74.72 221.43-144.18s112.18-139.24 144.18-221.43c30.9-79.46 52.1-170.34 58.06-303.41 6.06-133.38 7.47-175.89 7.47-515.35s-1.41-382.07-7.47-515.35c-6.06-133.08-27.16-224-58.06-303.41-32-82.19-74.72-151.86-144.18-221.43S2150.95 97.54 2068.86 65.63c-79.56-30.9-170.44-52.1-303.41-58.06C1632.17 1.51 1589.56 0 1250.1 0S868 1.41 734.65 7.57"
+                    fill="var(--primary-foreground)"
+                    stroke="var(--primary-foreground)"
+                    stroke-width=".094"
+                />
+            </svg>
         </a>
     </div>
 </section>
