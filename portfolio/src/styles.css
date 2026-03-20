@@ -1,23 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Open+Sans:wght@400;600;700&display=swap');
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-    --background: #151515;
-    --primary: #8d4ca6;
-    --dark-purple: #491d6d;
-    --primary-foreground: #cbcbcb;
-    --secondary: #31b9f8;
+    --background: #f5f5f5;
+    --primary: #65a64c;
+    --secondary: #416d1d;
+    --primary-foreground: #111827;
     --secondary-foreground: #0f1720;
-    --muted: #94a3b8;
-    --border: #e6e6e6;
+    --muted: #6b7280;
+    --border: #111827;
+    --white: #f2f2f2;
+    --black: #111827;
+    --gradient: conic-gradient(from var(--angle), #65a64c, #416d1d, #65a64c, #cbcbcb, #65a64c);
     --max-width: 1240px;
     --content-padding: 1rem;
-    --white: #f2f2f2;
+
     --bottom: 10rem;
     --bottom-mobile: 5rem;
     --bottom-section-title: 6rem;
     --bottom-section-title-mobile: 3rem;
     --heading-font: 'Krona One', 'Open Sans', sans-serif;
+}
+
+/* Dark mode overrides when html has .dark (ThemeService) */
+html.dark {
+    --background: #151515;
+    --primary: #8d4ca6;
+    --secondary: #491d6d;
+    --primary-foreground: #cbcbcb;
+    --secondary-foreground: #e6e6e6;
+    --gradient: conic-gradient(from var(--angle), #8d4ca6, #491d6d, #8d4ca6, #cbcbcb, #8d4ca6);
 }
 
 @layer base {
@@ -39,7 +53,13 @@
         min-height: 100%;
         color: var(--primary-foreground);
         background-color: var(--background);
-        font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+        font-family:
+            'Open Sans',
+            system-ui,
+            -apple-system,
+            'Segoe UI',
+            Roboto,
+            'Helvetica Neue',
             Arial;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -55,7 +75,7 @@
         margin: 0 0 1rem 0;
         font-family: 'Krona One', 'Open Sans', sans-serif;
         line-height: 1.15;
-        color: var(--white);
+        color: var(--primary-foreground);
     }
 
     h1 {
@@ -72,7 +92,7 @@
         margin: 0 0 1rem 0;
     }
     a {
-        color: var(--white);
+        color: var(--primary-foreground);
         text-decoration: none;
     }
 
@@ -90,18 +110,25 @@
         padding-right: var(--content-padding);
     }
 
-    .btn {
+    .btn,
+    .btn-dark {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         width: 75%;
         padding: 0.5rem 2rem;
         border-radius: 250px;
-        background-color: var(--white);
-        color: var(--color-black);
+        background-color: var(--background);
+        color: var(--primary-foreground);
         cursor: pointer;
         font-weight: 600;
         margin: 0 auto;
+    }
+
+    .btn-dark {
+        border-color: var(--border);
+        color: var(--primary-foreground);
+        background-color: var(--dark-bg);
     }
 
     .grow {
@@ -113,10 +140,8 @@
         transform: scale(1.04);
     }
 
-    .dynamic-btn {
+    .dynamic-btn, .dynamic-btn-dark {
         position: relative;
-        background-color: var(--secondary-foreground);
-        color: var(--white);
     }
 
     @property --angle {
@@ -125,21 +150,23 @@
         inherits: false;
     }
 
-    .dynamic-btn::before,
-    .dynamic-btn::after {
+    .dynamic-btn::before {
         content: '';
         position: absolute;
-        width: calc(100% + 5px);
-        height: calc(100% + 5px);
+        width: calc(100% + 7px);
+        height: calc(100% + 7px);
         border-radius: 250px;
-        background-image: conic-gradient(
-            from var(--angle),
-            #8d4ca6,
-            #491d6d,
-            #8d4ca6,
-            #cbcbcb,
-            #8d4ca6
-        );
+        background-image: var(--gradient);
+        z-index: -1;
+    }
+
+    .dynamic-btn::after{
+        content: '';
+        position: absolute;
+        width: calc(100% + 7px);
+        height: calc(100% + 7px);
+        border-radius: 250px;
+        background-image: var(--gradient);
         z-index: -1;
     }
 
@@ -200,7 +227,7 @@
     .btn.secondary {
         background-color: transparent;
         color: var(--primary-foreground);
-        border-color: rgba(255, 255, 255, 0.06);
+        border-color: var(--border);
     }
 
     .muted {
@@ -227,7 +254,7 @@
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: var(--white);
+    background-color: var(--primary-foreground);
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
