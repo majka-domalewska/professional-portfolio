@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { ThemeService } from '../../../services/theme';
+import { ThreeHero } from '../../three-hero/three-hero';
 
 @Component({
   selector: 'app-hero',
-  imports: [],
+  imports: [ThreeHero],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })

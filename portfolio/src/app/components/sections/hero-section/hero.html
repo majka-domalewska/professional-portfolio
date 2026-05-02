@@ -1,12 +1,14 @@
-<section
-    class="z-2 grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 h-[calc(100vh-150px)] mb-(--bottom-section-title-mobile) md:mb-(--bottom-section-title) max-section-width"
+<section #heroSection class="hero-shell overflow-visible z-2 grid grid-cols-1 md:grid-cols-3 md:grid-rows-3 h-[calc(100vh-150px)] mb-(--bottom-section-title-mobile) md:mb-(--bottom-section-title) max-section-width"
 >
+<!-- name block -->
     <div
-        class="row-start-2 md:row-start-2 md:col-span-3 flex flex-col justify-center items-center text-(--white)"
+        class="row-start-2 md:row-start-2 md:col-span-2 flex flex-col justify-center items-start text-(--white)"
     >
-        <h1 class="text-4xl md:text-7xl lg:text-8xl uppercase text-center">Maja</h1>
-        <h1 class="text-4xl md:text-7xl lg:text-8xl uppercase text-center">Domalewska</h1>
+        <h1 class="text-4xl md:text-7xl lg:text-8xl uppercase text-left">Maja</h1>
+        <h1 class="text-4xl md:text-7xl lg:text-8xl uppercase text-left">Domalewska</h1>
     </div>
+
+    <!-- left: theme toggle -->
 
     <div
         class="row-start-3 sticky gap-2 md:row-start-3 md:col-start-1 md:col-span-1 flex flex-wrap md:flex-nowrap justify-left items-end rounded-md"
@@ -29,6 +31,8 @@
         </label>
     </div>
 
+    <!-- middle: navigation -->
+
     <div
         class="row-start-3 gap-2 md:row-start-3 md:col-start-2 md:col-span-1 flex flex-wrap md:flex-nowrap justify-center items-end"
     >
@@ -46,7 +50,10 @@
         </a>
     </div>
 
+    <!-- right: socials -->
+
     <div class="row-start-4 md:row-start-3 md:col-start-3 flex justify-end items-end space-x-7">
+        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/majadomalewska/">
             <svg class="h-7 w-7 grow shrink-0" viewBox="0 5 1036 990">
                 <path
@@ -57,6 +64,7 @@
                 />
             </svg>
         </a>
+        <!-- Tidal -->
         <a
             href="
         https://tidal.com/playlist/5cf18800-0f88-48d7-9bf3-5f206585f9fe
@@ -76,6 +84,7 @@
                 />
             </svg>
         </a>
+        <!-- Instagram -->
         <a href="https://www.instagram.com/majka_domalewska/">
             <svg class="h-7 w-7 grow shrink-0" viewBox="0 0 2499.899999999999 2500">
                 <path
@@ -91,4 +100,11 @@
             </svg>
         </a>
     </div>
+
+    <!-- 3D scene -->
+     <div class="hero-scene-wrapper -z-10 md:col-start-2 md:col-span-2 md:min-w-full h-full hidden md:block">
+        <app-three-hero></app-three-hero>
+     </div>
 </section>
+
+<!-- [scrollProgress]="heroProgress" -->
